@@ -41,27 +41,28 @@ public class Contractor {
     }
 
     private void Fill_Company(String company, String inetex) {
-        driver.findElement(By.id(company)).click();
-        driver.findElement(By.id(company)).clear();
+        ClicAndClear(company);
         driver.findElement(By.id(company)).sendKeys(inetex);
     }
 
     private void Fill_Phone(String phone, String s) {
-        driver.findElement(By.id(phone)).click();
-        driver.findElement(By.id(phone)).clear();
+        ClicAndClear(phone);
         driver.findElement(By.id(phone)).sendKeys(s);
     }
 
     private void Fill_Email(String email, String s) {
-        driver.findElement(By.id(email)).click();
-        driver.findElement(By.id(email)).clear();
+        ClicAndClear(email);
         driver.findElement(By.id(email)).sendKeys(s);
     }
 
     private void Fill_Name(String name, String name1) {
+        ClicAndClear(name);
+        driver.findElement(By.id(name)).sendKeys(name1);
+    }
+
+    private void ClicAndClear(String name) {
         driver.findElement(By.id(name)).click();
         driver.findElement(By.id(name)).clear();
-        driver.findElement(By.id(name)).sendKeys(name1);
     }
 
     @After
